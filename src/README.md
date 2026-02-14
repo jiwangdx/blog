@@ -4,11 +4,11 @@ layout: Blog
 icon: house
 title: Home
 # heroImage: https://i.postimg.cc/g2c1xx8J/小太阳头像.png
-heroText: 你相信光吗
+heroText: 你 相 信 光 吗
 heroFullScreen: true
 # tagline: 你相信光吗
-bgImage: https://i.postimg.cc/0jPsbCpw/wallhaven-rr526j.jpg
-bgImageDark: https://i.postimg.cc/TwjLWCWX/wallhaven-5w9k91.png
+bgImage: https://i.postimg.cc/Ss5cSGjk/v2-6eb12b5b0935f78b612232382ea7697b-r.jpg
+bgImageDark: https://i.postimg.cc/WpkkmghK/wallhaven-o51k37.png
 
 projects:
   # - icon: folder-open
