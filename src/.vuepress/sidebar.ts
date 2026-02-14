@@ -4,23 +4,25 @@ export default sidebar({
   "/": [
     "",
     {
-      text: "如何使用",
+      text: "项目",
+      icon: "folder-open",
+      link: "projects/",
+    },
+
+  ],
+  
+  "/projects/": [
+    "",
+    {
+      text: "黑马点评使用笔记",
       icon: "laptop-code",
-      prefix: "demo/",
-      link: "demo/",
-      children: "structure",
+      link: "dianping/",
     },
-    {
-      text: "文章",
-      icon: "book",
-      prefix: "posts/",
-      children: "structure",
-    },
-    "intro",
-    {
-      text: "幻灯片",
-      icon: "person-chalkboard",
-      link: "https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html",
-    },
+  ],
+  
+  "/projects/dianping/": [
+    "",
+    { text: "登录", link: "01.登录" },
+    { text: "缓存", link: "02.缓存" },
   ],
 });
