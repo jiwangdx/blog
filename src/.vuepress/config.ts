@@ -17,7 +17,7 @@ export default defineUserConfig({
     }
   }),
 
-  base: "/blog/",
+  base: "/",
 
   lang: "zh-CN",
   title: "jiwang's blog",
