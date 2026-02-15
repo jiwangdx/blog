@@ -1,5 +1,5 @@
 ---
-title: 黑马点评使用笔记
+title: 黑马点评
 icon: laptop-code
 category:
   - 使用指南

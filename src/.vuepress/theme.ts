@@ -4,11 +4,13 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://mister-hope.github.io",
+  hostname: "https://jiwang.online/",
+
+  darkmode: "toggle",
 
   author: {
     name: "jiwang",
-    url: "https://mister-hope.com",
+    url: "https://jiwang.online/",
   },
 
   logo: "https://i.postimg.cc/g2c1xx8J/小太阳头像.png",
@@ -68,7 +70,7 @@ export default hopeTheme({
   editLink: false,
 
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
-  // hotReload: true,
+  hotReload: true,
 
   // 此处开启了很多功能用于演示，你应仅保留用到的功能。
   markdown: {

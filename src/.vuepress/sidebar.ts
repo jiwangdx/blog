@@ -14,7 +14,7 @@ export default sidebar({
   "/projects/": [
     "",
     {
-      text: "黑马点评使用笔记",
+      text: "黑马点评",
       icon: "laptop-code",
       link: "dianping/",
     },
@@ -22,7 +22,7 @@ export default sidebar({
   
   "/projects/dianping/": [
     "",
-    { text: "登录", link: "01.登录" },
-    { text: "缓存", link: "02.缓存" },
+    { text: "01.身份验证", link: "01.身份验证" },
+    { text: "02.缓存", link: "02.缓存" },
   ],
 });

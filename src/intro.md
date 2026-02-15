@@ -1,6 +1,6 @@
 ---
 icon: circle-info
-cover: /assets/images/cover3.jpg
+cover: https://i.postimg.cc/k5qKd6Vc/ziji.jpg
 ---
 
 # jiwang
