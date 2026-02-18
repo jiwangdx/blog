@@ -7,7 +7,7 @@ title: Home
 heroText: 你 相 信 光 吗
 heroFullScreen: true
 # tagline: 你相信光吗
-bgImage: /向日葵.jpg
+bgImage: /麦田.jpg
 bgImageDark: /暗夜.png
 
 projects:
