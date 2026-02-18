@@ -2,12 +2,14 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
   "/",
-  
   {
-    text: "项目",
-    icon: "folder-open",
+    text: "coding",
+    icon: "code",
+    link: "/codenotes/",
+  },
+  {
+    text: "project",
+    icon: "free",
     link: "/projects/",
   },
-
-
 ]);

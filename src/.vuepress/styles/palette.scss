@@ -8,3 +8,22 @@ $vp-c-bg: (
     light: #f5f5f5,
     dark: #1a1a1a
 )
+;
+
+// 暗黑模式背景图片
+$vp-bg-image-dark: '/暗夜.png';
+
+// 暗黑模式切换样式
+.dark-mode-toggle {
+  &:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+// 暗黑模式下的按钮样式
+[data-theme="dark"] {
+  .dark-mode-toggle {
+    background-color: rgba(30, 30, 30, 0.8) !important;
+    color: #e0e0e0 !important;
+  }
+}

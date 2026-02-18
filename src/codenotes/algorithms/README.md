@@ -1,6 +1,6 @@
 ---
 article: false
 ---
-# project
+# 《算法基础思想》
 
 <Catalog />

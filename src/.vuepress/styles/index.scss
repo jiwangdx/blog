@@ -19,3 +19,78 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
+
+// 为首页 heroText 添加艺术字效果
+/* 通用 hero 标题选择器 */
+.hero-title, 
+.hero-text, 
+.theme-hope-hero__title, 
+.theme-hope-hero-title, 
+.home-hero__title, 
+#hero-title, 
+[class*="hero"][class*="title"], 
+[class*="title"][class*="hero"] {
+  font-size: 3.5rem !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  letter-spacing: 8px !important;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    0 0 80px rgba(255, 215, 0, 0.2) !important;
+  background: linear-gradient(45deg, #fff, #ffd700, #fff) !important;
+  background-size: 200% 200% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: glowing 3s ease-in-out infinite alternate !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+// 艺术字动画效果
+@keyframes glowing {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .hero-title, 
+  .hero-text, 
+  .theme-hope-hero__title, 
+  .theme-hope-hero-title, 
+  .home-hero__title, 
+  #hero-title, 
+  [class*="hero"][class*="title"], 
+  [class*="title"][class*="hero"] {
+    font-size: 2.5rem !important;
+    letter-spacing: 4px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title, 
+  .hero-text, 
+  .theme-hope-hero__title, 
+  .theme-hope-hero-title, 
+  .home-hero__title, 
+  #hero-title, 
+  [class*="hero"][class*="title"], 
+  [class*="title"][class*="hero"] {
+    font-size: 2rem !important;
+    letter-spacing: 2px !important;
+  }
+}
+
+// 重置 README.md 中的 heroText 为纯文本
+// 因为 VuePress 可能不会解析 heroText 中的 HTML
+// 我们将通过 CSS 选择器来应用样式

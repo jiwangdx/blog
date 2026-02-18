@@ -1,12 +1,14 @@
 import { hopeTheme } from "vuepress-theme-hope";
 
 import navbar from "./navbar.js";
-import sidebar from "./sidebar.js";
 
 export default hopeTheme({
   hostname: "https://jiwang.online/",
 
-  darkmode: "toggle",
+  darkmode: "disable",
+
+  // 启用主题色功能
+  themeColor: true,
 
   author: {
     name: "jiwang",
@@ -17,14 +19,39 @@ export default hopeTheme({
 
   repo: "https://github.com/jiwangdx/",
 
-  docsDir: "src",
 
+
+  docsDir: "src",
 
   // 导航栏
   navbar,
 
-  // 侧边栏
-  sidebar,
+  // 侧边栏 - 为不同路径生成
+  sidebar: {
+    // 根目录侧边栏
+    "/": [
+      "",
+      { text: "coding", link: "/codenotes/"},
+      { text: "project", link: "/projects/"}
+    ],
+    // coding侧边栏
+    "/codenotes/": [
+      "",
+      { text: "《算法基础思想》", link: "/codenotes/algorithms/"},
+      { text: "《LC Hot100刷题笔记》", link: "/codenotes/lc-hot100/"}
+    ],
+    // 《算法基础思想》侧边栏
+    "/codenotes/algorithms/": "structure",
+    // LC Hot100侧边栏
+    "/codenotes/lc-hot100/": "structure",
+    // project侧边栏
+    "/projects/": [
+      "",
+      { text: "《优享生活圈》", link: "/projects/dianping/"}
+    ],
+    // 《优享生活圈》侧边栏
+    "/projects/dianping/": "structure"
+  },
 
   // 页脚
   footer: "光荣在于平淡，艰巨在于漫长",

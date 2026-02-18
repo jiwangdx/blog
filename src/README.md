@@ -7,8 +7,8 @@ title: Home
 heroText: 你 相 信 光 吗
 heroFullScreen: true
 # tagline: 你相信光吗
-bgImage: https://i.postimg.cc/Ss5cSGjk/v2-6eb12b5b0935f78b612232382ea7697b-r.jpg
-bgImageDark: https://i.postimg.cc/WpkkmghK/wallhaven-o51k37.png
+bgImage: /向日葵.jpg
+bgImageDark: /暗夜.png
 
 projects:
   # - icon: folder-open
