@@ -36,15 +36,23 @@ export default sidebar({
     {
       text: "《优享生活圈》",
       collapsible: true,
-      link: "dianping/",
+      link: "youxiang/",
+    },
+    {
+      text: "《智能股票分析系统》",
+      collapsible: true,
+      link: "trading/",
     },
   ],
 
   // 《优享生活圈》项目的侧边栏
-  "/projects/dianping/": [
+  "/projects/youxiang/": [
     "",
-    { text: "00. 身份验证", link: "00. 身份验证" },
-    { text: "01. 项目展示", link: "01. 项目展示" },
+  ],
+
+  // 《智能股票分析系统》项目的侧边栏
+  "/projects/trading/": [
+    "",
   ],
 
   // 《算法基础思想》的侧边栏

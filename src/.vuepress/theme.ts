@@ -47,10 +47,13 @@ export default hopeTheme({
     // project侧边栏
     "/projects/": [
       "",
-      { text: "《优享生活圈》", link: "/projects/dianping/"}
+      { text: "《优享生活圈》", link: "/projects/youxiang/"},
+      { text: "《智能股票分析系统》", link: "/projects/trading/"}
     ],
     // 《优享生活圈》侧边栏
-    "/projects/dianping/": "structure"
+    "/projects/youxiang/": "structure",
+    // 《智能股票分析系统》侧边栏
+    "/projects/trading/": "structure"
   },
 
   // 页脚
