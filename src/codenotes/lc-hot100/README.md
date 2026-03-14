@@ -1,5 +1,5 @@
 ---
-title: LC Hot100 刷题笔记
+title: 《LC Hot100 刷题笔记》
 article: false
 category:
   - 代码笔记
