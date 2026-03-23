@@ -3,13 +3,10 @@ home: true
 layout: Blog
 icon: house
 title: Home
-# heroImage: https://i.postimg.cc/g2c1xx8J/小太阳头像.png
 heroText: 你 相 信 光 吗
 heroFullScreen: true
-# tagline: 你相信光吗
-bgImage: /麦田.jpg
-bgImageDark: /暗夜.png
-
+bgImage: https://jiwang.cc.cd/PicGo/public/sunny.png
+bgImageDark: https://jiwang.cc.cd/PicGo/public/dark.png
 projects:
   # - icon: folder-open
   #   name: 项目名称
