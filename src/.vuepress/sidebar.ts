@@ -9,6 +9,10 @@ export default sidebar({
       link: "codenotes/",
     },
     {
+      text: "java",
+      link: "java/",
+    },
+    {
       text: "project",
       icon: "free",
       link: "projects/",
@@ -64,4 +68,5 @@ export default sidebar({
   "/codenotes/lc-hot100/": [
     ""
   ],
+
 });

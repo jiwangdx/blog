@@ -8,6 +8,10 @@ export default navbar([
     link: "/codenotes/",
   },
   {
+    text: "java",
+    link: "/java/",
+  },
+  {
     text: "project",
     icon: "free",
     link: "/projects/",

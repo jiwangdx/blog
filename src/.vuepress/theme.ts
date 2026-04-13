@@ -32,6 +32,7 @@ export default hopeTheme({
     "/": [
       "",
       { text: "coding", link: "/codenotes/"},
+      { text: "java", link: "/java/"},
       { text: "project", link: "/projects/"}
     ],
     // coding侧边栏
@@ -44,6 +45,13 @@ export default hopeTheme({
     "/codenotes/algorithms/": "structure",
     // LC Hot100侧边栏
     "/codenotes/lc-hot100/": "structure",
+    // java侧边栏
+    "/java/": [
+      "",
+      { text: "javase", link: "/java/javase/"}
+    ],
+    // javase侧边栏
+    "/java/javase/": "structure",
     // project侧边栏
     "/projects/": [
       "",
