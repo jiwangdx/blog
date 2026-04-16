@@ -48,10 +48,13 @@ export default hopeTheme({
     // java侧边栏
     "/java/": [
       "",
-      { text: "javase", link: "/java/javase/"}
+      { text: "javase", link: "/java/javase/"},
+      { text: "计算机基础知识", link: "/java/计算机基础知识/"}
     ],
     // javase侧边栏
     "/java/javase/": "structure",
+    // 计算机基础知识侧边栏
+    "/java/计算机基础知识/": "structure",
     // project侧边栏
     "/projects/": [
       "",

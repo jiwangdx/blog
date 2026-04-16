@@ -69,4 +69,29 @@ export default sidebar({
     ""
   ],
 
+  // java的侧边栏
+  "/java/": [
+    "",
+    {
+      text: "javase",
+      collapsible: true,
+      link: "javase/",
+    },
+    {
+      text: "计算机基础知识",
+      collapsible: true,
+      link: "计算机基础知识/",
+    }
+  ],
+
+  // javase的侧边栏
+  "/java/javase/": [
+    ""
+  ],
+
+  // 计算机基础知识的侧边栏
+  "/java/计算机基础知识/": [
+    ""
+  ],
+
 });

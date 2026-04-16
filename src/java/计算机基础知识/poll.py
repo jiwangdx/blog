@@ -3,6 +3,7 @@ import os
 import glob
 import hashlib
 import requests
+import mimetypes  # 新增：用于根据网络响应头判断文件后缀
 
 def download_and_replace_image_links(md_file_path, cookie_dict, save_folder='images'):
     # 获取脚本所在目录的绝对路径
@@ -21,24 +22,36 @@ def download_and_replace_image_links(md_file_path, cookie_dict, save_folder='ima
     with open(md_file_path, 'r', encoding='utf-8') as file:
         content = file.read()
 
-    # 1. 匹配标准 Markdown 格式：![alt](url)
-    pattern_md = r'!\[.*?\]\((https?://.*?\.(awebp|webp|jpg|png|gif|svg)\??.*?)\)'
+    # 1. 匹配标准 Markdown 格式。放宽限制：匹配括号内所有的非空白字符。不再死板要求后缀。
+    pattern_md = r'!\[.*?\]\((https?://[^\s)]+)\)'
     matches_md = re.findall(pattern_md, content)
 
-    # 2. 匹配 HTML img 标签格式：<img src="url" ...> (支持单引号和双引号)
-    pattern_html = r'<img.*?src=["\'](https?://.*?\.(awebp|webp|jpg|png|gif|svg)\??.*?)["\']'
+    # 2. 匹配 HTML img 标签格式。同样放宽限制。
+    pattern_html = r'<img.*?src=["\'](https?://[^"\'\s]+)["\']'
     matches_html = re.findall(pattern_html, content)
 
-    # 合并两种匹配结果，并利用 set 去重，避免同文件内相同图片重复请求
+    # 合并两种匹配结果，并利用 set 去重
     matches = list(set(matches_md + matches_html))
 
-    # 下载并保存图片，更新Markdown文件内容
     print(f"Found {len(matches)} unique images in {os.path.basename(md_file_path)}")
-    for match in matches:
-        url, file_extension = match
+    
+    for url in matches:
         try:
+            # 下载图片
             response = requests.get(url, cookies=cookie_dict)
-            response.raise_for_status()  # 确保请求成功
+            response.raise_for_status()
+
+            # 新增逻辑：通过服务器返回的 Content-Type 判断真实的图片格式
+            content_type = response.headers.get('Content-Type', '')
+            ext = mimetypes.guess_extension(content_type.split(';')[0]) # 获取如 '.png', '.jpg'
+            
+            if not ext:
+                ext = '.png' # 如果服务器没返回具体类型，兜底默认存为 png
+            
+            # 统一格式处理 (有些库端返回 .jpe，统一改为 .jpg)
+            file_extension = ext.lstrip('.')
+            if file_extension == 'jpe':
+                file_extension = 'jpg'
 
             # 计算图片的哈希值作为文件名
             file_hash = hashlib.sha256(response.content).hexdigest()
@@ -49,8 +62,8 @@ def download_and_replace_image_links(md_file_path, cookie_dict, save_folder='ima
             with open(file_path, 'wb') as f:
                 f.write(response.content)
 
-            # 替换Markdown文件中的链接
-            content = content.replace(url, f'{save_folder}/{filename}')
+            # 替换Markdown文件中的链接 (注意这里加了 ./ 解决 Vite 找不到资源的问题)
+            content = content.replace(url, f'./{save_folder}/{filename}')
 
         except requests.RequestException as e:
             print(f"Failed to download {url}: {e}")
@@ -62,12 +75,13 @@ def download_and_replace_image_links(md_file_path, cookie_dict, save_folder='ima
 def convert_cookie_to_dict(cookies):
     result = dict()
     for record in cookies.split('; '):
-        key, value = record.split('=')
-        result[key] = value
+        if '=' in record:
+            key, value = record.split('=', 1) # 增加最大分割次数防止 value 中包含 = 报错
+            result[key] = value
     return result
 
 # 此处替换成正常访问图片URL可能需要的cookie字符串
-cookie_dict = convert_cookie_to_dict("A=a; B=b; C=c");
+cookie_dict = convert_cookie_to_dict("A=a; B=b; C=c")
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 for md_file in glob.glob(os.path.join(script_dir, '*.md')):

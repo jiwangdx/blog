@@ -4,7 +4,6 @@ export default navbar([
   "/",
   {
     text: "coding",
-    icon: "code",
     link: "/codenotes/",
   },
   {
@@ -13,7 +12,7 @@ export default navbar([
   },
   {
     text: "project",
-    icon: "free",
+
     link: "/projects/",
   },
 ]);
